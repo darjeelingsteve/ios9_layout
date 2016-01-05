@@ -1,25 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jKx-7Y-GvT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="JbJ-Jq-8fK">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jKx-7Y-GvT" customClass="ViewController" customModule="iOS9_Layout" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="JxW-HC-OjW"/>
+                        <viewControllerLayoutGuide type="bottom" id="I02-X2-OUJ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="j2J-kd-ZcJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COc-op-3DC">
+                                <rect key="frame" x="20" y="20" width="560" height="534"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="xyf-ag-a2w">
+                                <rect key="frame" x="148" y="562" width="304" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="999" constant="300" id="S1x-Nn-NT4"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderValueDidChange:" destination="jKx-7Y-GvT" eventType="valueChanged" id="h5w-Ln-hQO"/>
+                                </connections>
+                            </slider>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="COc-op-3DC" firstAttribute="trailing" secondItem="j2J-kd-ZcJ" secondAttribute="trailingMargin" id="BFg-qT-8mv"/>
+                            <constraint firstItem="COc-op-3DC" firstAttribute="top" secondItem="JxW-HC-OjW" secondAttribute="bottom" id="CYe-Ds-Gdd"/>
+                            <constraint firstItem="I02-X2-OUJ" firstAttribute="top" secondItem="xyf-ag-a2w" secondAttribute="bottom" constant="8" id="PMd-r7-q9l"/>
+                            <constraint firstItem="xyf-ag-a2w" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="j2J-kd-ZcJ" secondAttribute="leadingMargin" constant="8" id="QRm-5q-Bmr"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="xyf-ag-a2w" secondAttribute="trailing" constant="8" id="YBo-Fs-xNg"/>
+                            <constraint firstItem="COc-op-3DC" firstAttribute="leading" secondItem="j2J-kd-ZcJ" secondAttribute="leadingMargin" id="adg-zb-HoA"/>
+                            <constraint firstItem="xyf-ag-a2w" firstAttribute="centerX" secondItem="j2J-kd-ZcJ" secondAttribute="centerX" id="mHa-dr-tLu"/>
+                            <constraint firstItem="xyf-ag-a2w" firstAttribute="top" secondItem="COc-op-3DC" secondAttribute="bottom" constant="8" id="ojG-cr-AMc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="COc-op-3DC" id="ygZ-V0-3R7"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y7G-Fv-tNO" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="215" y="805"/>
         </scene>
     </scenes>
 </document>
