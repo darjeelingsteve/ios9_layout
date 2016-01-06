@@ -27,22 +27,18 @@ class ViewController: UIViewController {
         containerView.addSubview(bottomView)
         
         // Constrain the top view's height to be 200
-        topView.addConstraint(topView.heightAnchor.constraintEqualToConstant(200))
+        topView.heightAnchor.constraintEqualToConstant(200).active = true
         
         // Constrain our top view to the container view's top, leading, and anchor layout margins
-        containerView.addConstraints([
-            topView.topAnchor.constraintEqualToAnchor(containerView.layoutMarginsGuide.topAnchor),
-            topView.leadingAnchor.constraintEqualToAnchor(containerView.layoutMarginsGuide.leadingAnchor),
-            topView.trailingAnchor.constraintEqualToAnchor(containerView.layoutMarginsGuide.trailingAnchor)
-            ])
+        topView.topAnchor.constraintEqualToAnchor(containerView.layoutMarginsGuide.topAnchor).active = true
+        topView.leadingAnchor.constraintEqualToAnchor(containerView.layoutMarginsGuide.leadingAnchor).active = true
+        topView.trailingAnchor.constraintEqualToAnchor(containerView.layoutMarginsGuide.trailingAnchor).active = true
         
         // Layout the top and bottom views to be vertically aligned and of equal size
-        containerView.addConstraints([
-            bottomView.topAnchor.constraintEqualToAnchor(topView.bottomAnchor, constant: 16.0),
-            bottomView.leadingAnchor.constraintEqualToAnchor(topView.leadingAnchor),
-            bottomView.widthAnchor.constraintEqualToAnchor(topView.widthAnchor),
-            bottomView.heightAnchor.constraintEqualToAnchor(topView.heightAnchor)
-            ])
+        bottomView.topAnchor.constraintEqualToAnchor(topView.bottomAnchor, constant: 16.0).active = true
+        bottomView.leadingAnchor.constraintEqualToAnchor(topView.leadingAnchor).active = true
+        bottomView.widthAnchor.constraintEqualToAnchor(topView.widthAnchor).active = true
+        bottomView.heightAnchor.constraintEqualToAnchor(topView.heightAnchor).active = true
     }
     
     @IBAction func sliderValueDidChange(slider: UISlider) {
