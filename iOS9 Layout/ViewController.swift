@@ -10,9 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     // The view that will contain our top and bottom views and whose layout margins will be manipulated
-    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet fileprivate weak var containerView: UIView!
     
-    @IBAction func sliderValueDidChange(slider: UISlider) {
+    @IBAction func sliderValueDidChange(_ slider: UISlider) {
         let newInset: CGFloat = CGFloat(slider.value)
         containerView.layoutMargins = UIEdgeInsets(top: newInset, left: newInset, bottom: newInset, right: newInset)
     }

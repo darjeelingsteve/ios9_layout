@@ -11,8 +11,8 @@ import UIKit
 /// A view class containing two equal sized subviews that are bound to its layout margins
 @IBDesignable
 class ContainerView: UIView {
-    private let topView = UIView()
-    private let bottomView = UIView()
+    fileprivate let topView = UIView()
+    fileprivate let bottomView = UIView()
     
     /// The colour of the top view
     @IBInspectable var topColour: UIColor? {
@@ -49,23 +49,23 @@ class ContainerView: UIView {
         commonInit()
     }
     
-    private func commonInit() {
+    fileprivate func commonInit() {
         topView.translatesAutoresizingMaskIntoConstraints = false
         bottomView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(topView)
         self.addSubview(bottomView)
         
-        topView.heightAnchor.constraintEqualToConstant(200).active = true
+        topView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         
         // Constrain our top view to the container view's top, leading, and anchor layout margins
-        topView.topAnchor.constraintEqualToAnchor(self.layoutMarginsGuide.topAnchor).active = true
-        topView.leadingAnchor.constraintEqualToAnchor(self.layoutMarginsGuide.leadingAnchor).active = true
-        topView.trailingAnchor.constraintEqualToAnchor(self.layoutMarginsGuide.trailingAnchor).active = true
+        topView.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor).isActive = true
+        topView.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
+        topView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor).isActive = true
         
         // Layout the top and bottom views to be vertically aligned and of equal size
-        bottomView.topAnchor.constraintEqualToAnchor(topView.bottomAnchor, constant: 16.0).active = true
-        bottomView.leadingAnchor.constraintEqualToAnchor(topView.leadingAnchor).active = true
-        bottomView.widthAnchor.constraintEqualToAnchor(topView.widthAnchor).active = true
-        bottomView.heightAnchor.constraintEqualToAnchor(topView.heightAnchor).active = true
+        bottomView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 16.0).isActive = true
+        bottomView.leadingAnchor.constraint(equalTo: topView.leadingAnchor).isActive = true
+        bottomView.widthAnchor.constraint(equalTo: topView.widthAnchor).isActive = true
+        bottomView.heightAnchor.constraint(equalTo: topView.heightAnchor).isActive = true
     }
 }
